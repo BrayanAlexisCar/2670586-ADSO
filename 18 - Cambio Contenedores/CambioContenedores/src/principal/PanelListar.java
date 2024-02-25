@@ -62,7 +62,7 @@ public class PanelListar extends javax.swing.JPanel {
 
             System.out.println(documento);
             
-            Object dato[] = new Object[]{ documento, nombres, apellidos,direccion, telefono, correo };
+            Object dato[] = new Object[]{ documento, nombres, apellidos,telefono,direccion, correo };
             modelo.addRow(dato);
         }
     }

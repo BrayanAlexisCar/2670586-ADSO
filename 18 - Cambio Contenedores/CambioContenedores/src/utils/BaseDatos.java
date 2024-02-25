@@ -29,7 +29,10 @@ public class BaseDatos {
         }
     }
     
-    public void imprimirPersonas(){
+    
+    
+    
+   public void imprmirPersonas(){
         ResultSet registros = null;
 	try {
 	    String consulta = "SELECT * FROM personas";
@@ -45,7 +48,9 @@ public class BaseDatos {
 	} catch (SQLException ex) {
 	    System.out.println("Error al buscar el cliente: "+ex.getMessage());
 	}   
+
     }
+    
     
     public Persona[] extraerPersonas(){
         try {

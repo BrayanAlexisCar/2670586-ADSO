@@ -4,10 +4,16 @@ import java.awt.Color;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import utils.BaseDatos;
 
 public class Menu extends javax.swing.JFrame {
+    
+    
+    BaseDatos basedatos;
 
     public Menu() {
+        
+        basedatos = new BaseDatos();
         initComponents();
         initAlternComponents();
     }
@@ -73,18 +79,38 @@ public class Menu extends javax.swing.JFrame {
         btnListar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnListar.setText("  LISTAR");
         btnListar.setFocusable(false);
+        btnListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarActionPerformed(evt);
+            }
+        });
 
         btnCrear.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnCrear.setText("   CREAR");
         btnCrear.setFocusable(false);
+        btnCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearActionPerformed(evt);
+            }
+        });
 
         btnEditar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnEditar.setText("  EDITAR");
         btnEditar.setFocusable(false);
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnEliminar.setText("   ELIMINAR");
         btnEliminar.setFocusable(false);
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout contentMenuLayout = new javax.swing.GroupLayout(contentMenu);
         contentMenu.setLayout(contentMenuLayout);
@@ -93,7 +119,7 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(contentMenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(contentMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(etqImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(etqImagen, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(btnCrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnListar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -150,6 +176,82 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
+             //crear el contendor nuevo
+        
+        PanelListar nuevo = new PanelListar( basedatos);
+        
+      
+        //ajustar el tamaño del contenedor nuevo
+        
+        nuevo.setPreferredSize(contentPrincipal.getPreferredSize());
+        nuevo.setSize(contentPrincipal.getSize());
+        
+        
+        //eliminar el contenidp dle contendedorPrincipal
+        
+        contentPrincipal.removeAll();
+        
+        
+        //agregar dentro del contendorPrincipal el contendor nuevo
+        
+        contentPrincipal.add(nuevo);
+      
+        //rapaint(); //refrescar cambios
+        repaint();
+        revalidate();        
+    }//GEN-LAST:event_btnListarActionPerformed
+
+    
+    private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
+        PanelCrear nuevo = new PanelCrear(basedatos);
+        
+
+        nuevo.setPreferredSize(contentPrincipal.getPreferredSize());
+        nuevo.setSize(contentPrincipal.getSize());
+
+        
+        contentPrincipal.removeAll();
+
+
+        contentPrincipal.add(nuevo);
+
+        repaint();
+        revalidate();
+    }//GEN-LAST:event_btnCrearActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        PanelEditar nuevo = new PanelEditar(basedatos);
+
+      
+        nuevo.setPreferredSize(contentPrincipal.getPreferredSize());
+        nuevo.setSize(contentPrincipal.getSize());
+
+        
+        contentPrincipal.removeAll();
+
+        contentPrincipal.add(nuevo);
+
+        
+        repaint();
+        revalidate(); 
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        PanelEliminar nuevo = new PanelEliminar(basedatos);
+
+        nuevo.setPreferredSize(contentPrincipal.getPreferredSize());
+        nuevo.setSize(contentPrincipal.getSize());
+
+        contentPrincipal.removeAll();
+
+        
+        contentPrincipal.add(nuevo);
+ 
+        repaint();
+        revalidate();
+    }//GEN-LAST:event_btnEliminarActionPerformed
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrear;
