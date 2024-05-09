@@ -1,0 +1,57 @@
+#btn_back{
+    background-color: rgb(47, 54, 248);
+    color: white;
+    width: 100px;
+}
+
+#btn_back:hover{
+
+    background-color: rgb(201, 3, 49);
+}
+
+
+#btn_consumo{
+    background-color: rgb(252, 74, 74);
+    color: white;
+    width: 190px;
+    
+}
+
+#btn_consumo:hover{
+
+    background-color:rgb(143, 44, 255);
+}
+
+
+
+#btn_next{
+   
+    background-color: rgb(47, 54, 248);
+    color: white;
+    width: 100px;
+}
+
+#btn_next:hover{
+
+    background-color:rgb(143, 44, 255);
+}
+
+body{
+    background-color: rgb(129, 144, 209);
+}
+
+
+
+
+/* Estilos para dividir en dos columnas */
+#contenPrincipal {
+    margin-top: 20px;
+    width: auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+ 
+    gap: 10px;
+}
+
+
