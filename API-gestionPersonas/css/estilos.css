@@ -1,0 +1,74 @@
+
+
+#btn_consumo{
+    background-color: rgb(252, 74, 74);
+    color: white;
+    width: 190px;
+    
+}
+
+#btn_consumo:hover{
+
+    background-color:rgb(234, 215, 255);
+}
+
+
+#btn_insertar{
+    background-color: rgb(95, 122, 253);
+    color: white;
+    width: 190px;
+    
+}
+
+#btn_insertar:hover{
+
+    background-color:rgb(131, 80, 234);
+}
+
+
+
+
+#btn_actualizar{
+    background-color: rgb(17, 167, 6);
+    color: white;
+    width: 190px;
+    
+}
+
+#btn_actualizar:hover{
+
+    background-color:rgb(209, 213, 0);
+}
+
+
+#btn_eliminar{
+    background-color: rgb(215, 7, 7);
+    color: white;
+    width: 190px;
+    
+}
+
+#btn_eliminar:hover{
+
+    background-color:rgb(255, 82, 116);
+}
+#contenPrincipal {
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+.card{
+    background-color: rgb(235, 247, 250);
+}
+
+#contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
