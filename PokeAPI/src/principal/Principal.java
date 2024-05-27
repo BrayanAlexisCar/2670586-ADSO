@@ -1,6 +1,8 @@
 
 package principal;
 
+import com.google.gson.JsonObject;
+
 
 
 public class Principal {
