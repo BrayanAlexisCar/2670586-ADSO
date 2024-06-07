@@ -1,15 +1,17 @@
 <?php 
     include 'DB/Conexion.php';
 
-    if (!empty($_POST['nombre'])) {
+    if (!empty($_POST['id_categoria'])) {
 
+        $id_categoria = $_POST['id_categoria'];
         $nombre = $_POST['nombre'];
        
 
         try {
-            $consulta = $base_de_datos->prepare("UPDATE categoria SET nombre=:nom WHERE nombre = :nom");
+            $consulta = $base_de_datos->prepare("UPDATE categoria SET nombre=:nom WHERE id_categoria = :id_c");
 
             $consulta->bindParam(':nom', $nombre);
+            $consulta->bindParam(':id_c', $id_categoria);
             
            
             
