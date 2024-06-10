@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-06-2024 a las 23:32:09
+-- Tiempo de generación: 10-06-2024 a las 17:05:58
 -- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Versión de PHP: 8.1.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,7 +39,10 @@ CREATE TABLE `categoria` (
 INSERT INTO `categoria` (`id_categoria`, `nombre`) VALUES
 (1, 'suspenso'),
 (2, 'guerra'),
-(3, 'terror');
+(3, 'terror'),
+(8, 'crimen'),
+(9, 'drama'),
+(10, 'adiccion');
 
 -- --------------------------------------------------------
 
@@ -61,9 +64,12 @@ CREATE TABLE `pelicula` (
 --
 
 INSERT INTO `pelicula` (`id_pelicula`, `nombre`, `director`, `anio`, `sinopsis`, `id_categoria`) VALUES
-(1, 'Baastardos sin gloria', 'Quentin Tarantino', 2009, 'Es el primer año de la ocupación alemana de Francia. El oficial aliado, teniente Aldo Raine, ensambla un equipo de soldados judíos para cometer actos violentos en contra de los nazis, incluyendo la toma de cabelleras. Él y sus hombres unen fuerzas con Bridget von Hammersmark, una actriz alemana y agente encubierto, para derrocar a los líderes del Tercer Reich. Sus destinos convergen con la dueña d', 2),
+(1, 'Bastardos sin gloria', 'Quentin Tarantino', 2009, 'Es el primer año de la ocupación alemana de Francia. El oficial aliado, teniente Aldo Raine, ensambla un equipo de soldados judíos para cometer actos violentos en contra de los nazis, incluyendo la toma de cabelleras. Él y sus hombres unen fuerzas con Bridget von Hammersmark, una actriz alemana y agente encubierto, para derrocar a los líderes del Tercer Reich. Sus destinos convergen con la dueña d', 3),
 (2, 'Requiem for a dream', 'Darren Aronofsky', 2001, 'Una envejecida viuda se vuelve adicta a píldoras dietéticas mientras su hijo libra su propia batalla con estupefacientes.', 1),
-(3, 'El descenso', ' Neil Marshall', 2005, 'Un año después de un severo trauma emocional, Sarah viaja a Carolina del Norte para pasar unos días explorando unas cuevas con sus amigas; después de descender bajo tierra, las amigas hallan unas pinturas extrañas y evidencias de una expedición anterior, luego descubren que no están solas. Depredadores subterráneos habitan el lugar y a ellos les gusta mucho la carne humana.', 3);
+(3, 'El descenso', ' Neil Marshall', 2005, 'Un año después de un severo trauma emocional, Sarah viaja a Carolina del Norte para pasar unos días explorando unas cuevas con sus amigas; después de descender bajo tierra, las amigas hallan unas pinturas extrañas y evidencias de una expedición anterior, luego descubren que no están solas. Depredadores subterráneos habitan el lugar y a ellos les gusta mucho la carne humana.', 3),
+(21, 'Historia Americana X', 'Tony Kaye', 1998, 'Tras ser liberado de la c?rcel, un antiguo neonazi trata de evitar que su hermano menor siga sus pasos en la senda del odio.', 2),
+(22, 'Trainspotting', ' Danny Boyle', 1996, 'Unos j?venes de Edimburgo mantienen una dependencia intermitente a la hero?na. Basado en la novela de Irvine Welsh.', 10),
+(23, 'D?a de entrenamiento', 'Antoine Fuqua', 2001, 'Un corrupto oficial usa la fanfarroner?a, intimidaci?n y drogas para que un nuevo polic?a se vuelva uno de los suyos.', 8);
 
 --
 -- Índices para tablas volcadas
@@ -90,13 +96,13 @@ ALTER TABLE `pelicula`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `pelicula`
 --
 ALTER TABLE `pelicula`
-  MODIFY `id_pelicula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pelicula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Restricciones para tablas volcadas

@@ -1,5 +1,5 @@
 <?php 
-    include 'DB/Conexion.php';
+    include 'DB/conexion.php';
 
     if (!empty($_POST['nombre'])) {
         

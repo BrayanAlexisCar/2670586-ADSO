@@ -1,16 +1,19 @@
 <?php 
-    include 'DB/Conexion.php';
+    include 'DB/conexion.php';
 
-    if (!empty($_POST['nombre']) and !empty($_POST['director']) and !empty($_POST['anio']) and !empty($_POST['sinopsis']) and !empty($_POST['id_categoria']) ) {
+    if (!empty($_POST['id_pelicula']) and !empty($_POST['nombre']) and !empty($_POST['director']) and !empty($_POST['anio']) and !empty($_POST['sinopsis']) and !empty($_POST['id_categoria']) ) {
 
-        $nombre = $_POST['nombre'];
+        $id_pelicula = $_POST['id_pelicula']; 
+        $nombre = $_POST['nombre']; 
+        $director = $_POST['director'];
         $anio = $_POST['anio'];
         $sinopsis = $_POST['sinopsis'];
         $id_categoria = $_POST['id_categoria'];
 
         try {
-            $consulta = $base_de_datos->prepare("UPDATE pelicula SET nombre=:nom, director=:dir, anio=:ani, sinopsis=:sin, id_categoria=:id_c WHERE nombre = :nom");
+            $consulta = $base_de_datos->prepare("UPDATE pelicula SET nombre=:nom, director=:dir, anio=:ani, sinopsis=:sin, id_categoria=:id_c WHERE id_pelicula = :id_p");
 
+            $consulta->bindParam(':id_p', $id_pelicula);
             $consulta->bindParam(':nom', $nombre);
             $consulta->bindParam(':dir', $director);
             $consulta->bindParam(':ani', $anio);

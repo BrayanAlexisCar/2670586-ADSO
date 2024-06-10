@@ -1,14 +1,14 @@
 <?php 
-    include 'DB/Conexion.php';
+    include 'DB/conexion.php';
 
-    if (!empty($_POST['nombre'])) {
+    if (!empty($_POST['id_pelicula'])) {
         
-        $nombre = $_POST['nombre'];
+        $id_pelicula = $_POST['id_pelicula'];
         
         try {
-            $consulta = $base_de_datos->prepare("DELETE FROM pelicula WHERE nombre = :nom ");
+            $consulta = $base_de_datos->prepare("DELETE FROM pelicula WHERE id_pelicula = :id_p ");
 
-            $consulta->bindParam(':nom', $nombre);
+            $consulta->bindParam(':id_p', $id_pelicula);
             $proceso = $consulta->execute();
 
             if( $proceso && $consulta->rowCount()!=0){

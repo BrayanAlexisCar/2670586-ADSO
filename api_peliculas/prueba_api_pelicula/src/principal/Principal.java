@@ -10,15 +10,16 @@ public class Principal {
     
     public static void main(String[] args) {
         ConsumoAPI consumo = new ConsumoAPI();
+        Menu menu = new Menu();
         
       
       //endopoint obtener PELICULA
-      String respuesta01 = consumo.consumoGET("http://localhost/api_peliculaS/API/obtenerpelicula.php");
-      System.out.println("respuesta obtener:" +respuesta01);
+      //String respuesta01 = consumo.consumoGET("http://localhost/api_peliculaS/API/obtenerpelicula.php");
+      //System.out.println("respuesta obtener:" +respuesta01);
       
        //endopoint obtener CATEGORIA
-       String respuesta001 = consumo.consumoGET("http://localhost/api_peliculaS/API/obtenercategoria.php");
-      System.out.println("respuesta obtener:" +respuesta001);
+       //String respuesta001 = consumo.consumoGET("http://localhost/api_peliculaS/API/obtenercategoria.php");
+      //System.out.println("respuesta obtener:" +respuesta001);
       
       
       
